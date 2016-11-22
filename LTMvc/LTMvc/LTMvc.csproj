@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2BF3CF87-FC56-4039-86FA-3B0ABB444FE4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LTMvc</RootNamespace>
+    <AssemblyName>LTMvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\Documents\Visual Studio 2015\Projects\WebApplication2\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\th.jpg" />
+    <Content Include="Content\jstree\jstree.min.js" />
+    <Content Include="Content\jstree\style.min.css" />
+    <Content Include="Content\LTMvc\js\News.js" />
+    <Content Include="Content\MAdmin\css\style-responsive.css" />
+    <Content Include="Content\MAdmin\css\themes\style1\orange-blue.css" />
+    <Content Include="Content\MAdmin\css\themes\style1\pink-blue.css" />
+    <Content Include="Content\MAdmin\css\themes\style1\pink-violet.css" />
+    <Content Include="Content\MAdmin\images\gallery\1.jpg" />
+    <Content Include="Content\MAdmin\images\gallery\2.jpg" />
+    <Content Include="Content\MAdmin\images\gallery\3.jpg" />
+    <Content Include="Content\MAdmin\js\animation.js" />
+    <Content Include="Content\MAdmin\js\charts-chartjs.js" />
+    <Content Include="Content\MAdmin\js\charts-flotchart.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-area.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-column-bar.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-combinations.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-dynamic.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-line.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-more.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-pie.js" />
+    <Content Include="Content\MAdmin\js\charts-highchart-scatter-bubble.js" />
+    <Content Include="Content\MAdmin\js\email-compose-mail.js" />
+    <Content Include="Content\MAdmin\js\email-inbox.js" />
+    <Content Include="Content\MAdmin\js\extra-profile.js" />
+    <Content Include="Content\MAdmin\js\extra-signup.js" />
+    <Content Include="Content\MAdmin\js\form-components.js" />
+    <Content Include="Content\MAdmin\js\form-dropzone-file-upload.js" />
+    <Content Include="Content\MAdmin\js\form-multiple-file-upload.js" />
+    <Content Include="Content\MAdmin\js\form-validation.js" />
+    <Content Include="Content\MAdmin\js\form-wizard.js" />
+    <Content Include="Content\MAdmin\js\form-xeditable.js" />
+    <Content Include="Content\MAdmin\js\html5shiv.js" />
+    <Content Include="Content\MAdmin\js\index.js" />
+    <Content Include="Content\MAdmin\js\jplist.js" />
+    <Content Include="Content\MAdmin\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\MAdmin\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\MAdmin\js\jquery-ui.js" />
+    <Content Include="Content\MAdmin\js\jquery.menu.js" />
+    <Content Include="Content\MAdmin\js\main.js" />
+    <Content Include="Content\MAdmin\js\moment.min.js" />
+    <Content Include="Content\MAdmin\js\page-calendar.js" />
+    <Content Include="Content\MAdmin\js\page-contact.js" />
+    <Content Include="Content\MAdmin\js\page-gallery.js" />
+    <Content Include="Content\MAdmin\js\respond.min.js" />
+    <Content Include="Content\MAdmin\js\table-action.js" />
+    <Content Include="Content\MAdmin\js\table-advanced.js" />
+    <Content Include="Content\MAdmin\js\table-datatables.js" />
+    <Content Include="Content\MAdmin\js\table-editable.js" />
+    <Content Include="Content\MAdmin\js\table-export.js" />
+    <Content Include="Content\MAdmin\js\table-filter.js" />
+    <Content Include="Content\MAdmin\js\table-sample.js" />
+    <Content Include="Content\MAdmin\js\ui-checkbox-radio.js" />
+    <Content Include="Content\MAdmin\js\ui-dropdown-select.js" />
+    <Content Include="Content\MAdmin\js\ui-editors.js" />
+    <Content Include="Content\MAdmin\js\ui-generals.js" />
+    <Content Include="Content\MAdmin\js\ui-nestable-list.js" />
+    <Content Include="Content\MAdmin\js\ui-notific8.js" />
+    <Content Include="Content\MAdmin\js\ui-portlets.js" />
+    <Content Include="Content\MAdmin\js\ui-progressbars.js" />
+    <Content Include="Content\MAdmin\js\ui-sliders.js" />
+    <Content Include="Content\MAdmin\js\ui-tabs.js" />
+    <Content Include="Content\MAdmin\js\ui-toastr-notifications.js" />
+    <Content Include="Content\MAdmin\js\ui-treeview.js" />
+    <Content Include="Content\MAdmin\vendors\animate.css\animate.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-clockface\css\clockface.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-clockface\js\clockface.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-markdown\css\bootstrap-markdown.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-markdown\js\bootstrap-markdown.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-progressbar\css\bootstrap-progressbar-3.1.1.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-switch\css\bootstrap-switch.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap-wysihtml5\bootstrap3-wysihtml5.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\MAdmin\vendors\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\MAdmin\vendors\calendar\zabuto_calendar.min.css" />
+    <Content Include="Content\MAdmin\vendors\calendar\zabuto_calendar.min.js" />
+    <Content Include="Content\MAdmin\vendors\charCount.js" />
+    <Content Include="Content\MAdmin\vendors\chart.js\Chart.min.js" />
+    <Content Include="Content\MAdmin\vendors\ckeditor\ckeditor.js" />
+    <Content Include="Content\MAdmin\vendors\DataTables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\MAdmin\vendors\DataTables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Content\MAdmin\vendors\DataTables\jquery.jeditable.js" />
+    <Content Include="Content\MAdmin\vendors\DataTables\media\css\dataTables.bootstrap.css" />
+    <Content Include="Content\MAdmin\vendors\DataTables\media\css\jquery.dataTables.css" />
+    <Content Include="Content\MAdmin\vendors\DataTables\media\js\dataTables.bootstrap.js" />
+    <Content Include="Content\MAdmin\vendors\DataTables\media\js\jquery.dataTables.js" />
+    <Content Include="Content\MAdmin\vendors\dropzone\css\dropzone.css" />
+    <Content Include="Content\MAdmin\vendors\dropzone\js\dropzone.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.categories.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.fillbetween.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.pie.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.resize.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.spline.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.stack.js" />
+    <Content Include="Content\MAdmin\vendors\flot-chart\jquery.flot.tooltip.js" />
+    <Content Include="Content\MAdmin\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\MAdmin\vendors\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\MAdmin\vendors\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\MAdmin\vendors\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\MAdmin\vendors\gmaps\gmaps.js" />
+    <Content Include="Content\MAdmin\vendors\holder\holder.js" />
+    <Content Include="Content\MAdmin\vendors\iCheck\custom.min.js" />
+    <Content Include="Content\MAdmin\vendors\iCheck\icheck.min.js" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\all.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\flat\all.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\futurico\futurico.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\line\all.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\minimal\all.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\minimal\grey.png" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\polaris\polaris.css" />
+    <Content Include="Content\MAdmin\vendors\iCheck\skins\square\all.css" />
+    <Content Include="Content\MAdmin\vendors\intro.js\intro.js" />
+    <Content Include="Content\MAdmin\vendors\intro.js\introjs.css" />
+    <Content Include="Content\MAdmin\vendors\ion.rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="Content\MAdmin\vendors\ion.rangeSlider\js\ion.rangeSlider.min.js" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\css\jplist-custom.css" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\arch-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\arch-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\autumn-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\boats.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\book-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\business-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\calendar-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\car-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\christmas-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\christmas-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\christmas-3.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\city-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\city-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\coffee-grass.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\coins.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\crayons.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\cupcakes.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\eggs-nest.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\flower-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\flower-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\flower-3.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\fountain.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\leaves.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\lichterman.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\pinecone.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\river-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\river-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\sunset-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\tree.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\winter-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\winter-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\winter-sun.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs-450\woodstump.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\arch-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\arch-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\autumn-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\boats-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\book-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\business-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\calendar-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\car-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\christmas-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\christmas-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\christmas-3.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\city-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\city-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\coffee-grass.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\coins.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\crayons.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\cupcakes.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\eggs-nest.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\flower-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\flower-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\flower-3.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\fountain.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\leaves.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\lichterman.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\pinecone.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\river-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\river-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\sunset-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\tree.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\winter-1.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\winter-2.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\winter-sun.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\img\thumbs\woodstump.jpg" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\js\jplist.min.js" />
+    <Content Include="Content\MAdmin\vendors\jplist\html\js\vendor\modernizr.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-bootstrap-wizard\custom.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-cookie\jquery.cookie.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\css\blueimp-gallery.min.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\css\jquery.fileupload.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-audio.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-image.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-process.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-validate.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload-video.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\vendor\jquery.blueimp-gallery.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\data.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\drilldown.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\exporting.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\funnel.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\highchart.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\highcharts-more.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-highcharts\highcharts.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-maskedinput\jquery-maskedinput.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-nestable\nestable.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-news-ticker\jquery.newsTicker.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-notific8\jquery.notific8.min.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-notific8\jquery.notific8.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-notific8\notific8.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-pace\pace.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-pace\pace.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-steps\css\jquery.steps.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-steps\js\jquery.steps.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-tablesorter\jquery.tablesorter.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-tablesorter\themes\blue\style-custom.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-toastr\toastr.min.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-toastr\toastr.min.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-treetable\javascripts\src\jquery.treetable.js" />
+    <Content Include="Content\MAdmin\vendors\jquery-treetable\stylesheets\jquery.treetable.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-treetable\stylesheets\jquery.treetable.theme.custom.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Content\MAdmin\vendors\jquery-validate\jquery.validate.min.js" />
+    <Content Include="Content\MAdmin\vendors\jstree\dist\jstree.min.js" />
+    <Content Include="Content\MAdmin\vendors\jstree\dist\themes\default\style.min.css" />
+    <Content Include="Content\MAdmin\vendors\lightbox\css\lightbox.css" />
+    <Content Include="Content\MAdmin\vendors\lightbox\img\close.png" />
+    <Content Include="Content\MAdmin\vendors\lightbox\img\loading.gif" />
+    <Content Include="Content\MAdmin\vendors\lightbox\img\next.png" />
+    <Content Include="Content\MAdmin\vendors\lightbox\img\prev.png" />
+    <Content Include="Content\MAdmin\vendors\lightbox\js\lightbox.min.js" />
+    <Content Include="Content\MAdmin\vendors\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Content\MAdmin\vendors\mixitup\src\jquery.mixitup.js" />
+    <Content Include="Content\MAdmin\vendors\moment\moment.js" />
+    <Content Include="Content\MAdmin\vendors\multi-select\css\multi-select-madmin.css" />
+    <Content Include="Content\MAdmin\vendors\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Content\MAdmin\vendors\nouislider\jquery.nouislider.css" />
+    <Content Include="Content\MAdmin\vendors\nouislider\jquery.nouislider.min.js" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader1.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader10.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader11.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader12.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader13.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader14.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader16.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader17.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader2.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader3.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader4.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader5.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader6.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader7.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader8.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\images\loader9.GIF" />
+    <Content Include="Content\MAdmin\vendors\pageloader\pageloader.css" />
+    <Content Include="Content\MAdmin\vendors\responsive-tabs\responsive-tabs.js" />
+    <Content Include="Content\MAdmin\vendors\sco.message\sco.message.css" />
+    <Content Include="Content\MAdmin\vendors\sco.message\sco.message.js" />
+    <Content Include="Content\MAdmin\vendors\select2\select2-madmin.css" />
+    <Content Include="Content\MAdmin\vendors\select2\select2.min.js" />
+    <Content Include="Content\MAdmin\vendors\slimScroll\jquery.slimscroll.js" />
+    <Content Include="Content\MAdmin\vendors\summernote\summernote.css" />
+    <Content Include="Content\MAdmin\vendors\summernote\summernote.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\html2canvas.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\csv.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\json.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\pdf.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\ppt.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\sql.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\txt.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\word.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\xls.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\icon\xml.png" />
+    <Content Include="Content\MAdmin\vendors\tableExport\jquery.base64.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\jspdf\jspdf.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\jspdf\libs\base64.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\jspdf\libs\sprintf.js" />
+    <Content Include="Content\MAdmin\vendors\tableExport\tableExport.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Content\MAdmin\vendors\x-editable\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\demo-mock.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\inputs-ext\address\address.css" />
+    <Content Include="Content\MAdmin\vendors\x-editable\inputs-ext\address\address.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\inputs-ext\typeaheadjs\lib\typeahead.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\inputs-ext\typeaheadjs\typeaheadjs.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\inputs-ext\wysihtml5\wysihtml5.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\jquery.mockjax.js" />
+    <Content Include="Content\MAdmin\vendors\x-editable\select2\lib\select2-madmin.css" />
+    <Content Include="Content\MAdmin\vendors\x-editable\select2\lib\select2.js" />
+    <Content Include="Content\wangEditor\css\wangEditor.css" />
+    <Content Include="Content\wangEditor\css\wangEditor.min.css" />
+    <Content Include="Content\wangEditor\fonts\icomoon.svg" />
+    <Content Include="Content\wangEditor\js\lib\jquery-1.10.2.min.js" />
+    <Content Include="Content\wangEditor\js\lib\jquery-2.2.1.js" />
+    <Content Include="Content\wangEditor\js\wangEditor.js" />
+    <Content Include="Content\wangEditor\js\wangEditor.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="scripts\ai.0.22.19-build00125.js" />
+    <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="Content\MAdmin\vendors\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\MAdmin\vendors\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\MAdmin\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\MAdmin\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\wangEditor\css\wangEditor.less" />
+    <Content Include="Content\wangEditor\fonts\icomoon.eot" />
+    <Content Include="Content\wangEditor\fonts\icomoon.ttf" />
+    <Content Include="Content\wangEditor\fonts\icomoon.woff" />
+    <None Include="Properties\PublishProfiles\LTMvc.pubxml" />
+    <None Include="Properties\PublishProfiles\web.pubxml" />
+    <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\GetNewsContentController.cs" />
+    <Compile Include="Controllers\Api\GetNewsListController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageUploadController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UploadImg.ashx.cs">
+      <DependentUpon>UploadImg.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Login\UserLogin.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="UploadImg.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\MAdmin\vendors\jquery-ui-1.10.3.custom\css\ui-lightness\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Catalog\" />
+    <Folder Include="Views\ImageUpload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LTMvcBLL\LTMvcBLL.csproj">
+      <Project>{40e0a297-6388-4797-a795-8dcefb856c8b}</Project>
+      <Name>LTMvcBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LTMvcModels\LTMvcModels.csproj">
+      <Project>{a410732a-fe17-49b0-9b15-6e51791b7345}</Project>
+      <Name>LTMvcModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8487</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8487/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

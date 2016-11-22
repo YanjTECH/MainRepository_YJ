@@ -1,0 +1,257 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>路泰科技后台管理系统</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="Thu, 19 Nov 1900 08:52:00 GMT">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--Loading bootstrap css-->
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/bootstrap/css/bootstrap.min.css">
+    <!--LOADING STYLESHEET FOR PAGE-->
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/intro.js/introjs.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/calendar/zabuto_calendar.min.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/sco.message/sco.message.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/intro.js/introjs.css">
+    <!--Loading style vendors-->
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/animate.css/animate.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/jquery-pace/pace.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/iCheck/skins/all.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/jquery-notific8/jquery.notific8.min.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/vendors/bootstrap-daterangepicker/daterangepicker-bs3.css">
+    <!--Loading style-->
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/css/themes/style1/orange-blue.css" class="default-style">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/css/themes/style1/orange-blue.css" id="theme-change" class="style-change color-change">
+    <link type="text/css" rel="stylesheet" href="~/Content/MAdmin/css/style-responsive.css">
+</head>
+<body class=" ">
+    <div>
+        <!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
+        <!--END BACK TO TOP-->
+        <!--BEGIN TOPBAR-->
+        <div id="header-topbar-option-demo" class="page-header-topbar">
+            <nav id="topbar" role="navigation" style="margin-bottom: 0; z-index: 2;" class="navbar navbar-default navbar-static-top">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    </button><a id="logo" href="index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">路泰科技</span><span style="display: none" class="logo-text-icon">LT</span></a>
+                </div>
+                <div class="topbar-main">
+                    <a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                    <ul class="nav navbar-nav    ">
+                        <li class="active">
+                            <a href="index.html">网站管理</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar navbar-top-links navbar-right mbn">
+                        <li class="dropdown">
+                            <a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">3</span></a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                <li>
+                                    <p>你有xxx条未读信息</p>
+                                </li>
+                                <li>
+                                    <div class="dropdown-slimscroll">
+                                        <ul>
+                                            <li>
+                                                <a href="extra-user-list.html" target="_blank"><span class="label label-blue"><i class="fa fa-comment"></i></span>New Comment<span class="pull-right text-muted small">4 mins ago</span></a>
+                                            </li>
+                                            <li>
+                                                <a href="extra-user-list.html" target="_blank"><span class="label label-violet"><i class="fa fa-twitter"></i></span>3 New Followers<span class="pull-right text-muted small">12 mins ago</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="last">
+                                    <a href="extra-user-list.html" class="text-right">查看更多</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown topbar-user">
+                            <a data-hover="dropdown" href="#" class="dropdown-toggle">
+                                <img src="~/Content/images/th.jpg" alt="" class="img-responsive img-circle" />&nbsp;<span class="hidden-xs">管理员</span>&nbsp;<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user pull-right">
+                                <li>
+                                    <a href="extra-profile.html"><i class="fa fa-user"></i>个人信息</a>
+                                </li>
+                                <li>
+                                    <a href="page-calendar.html"><i class="fa fa-calendar"></i>日历</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-tasks"></i>任务</a>
+                                </li>
+                                <li>
+                                    <a href="/Login/Index"><i class="fa fa-key"></i>登出</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--BEGIN MODAL CONFIG PORTLET-->
+            <div id="modal-config" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend et nisl eget porta. Curabitur elementum sem molestie nisl varius, eget tempus odio molestie. Nunc vehicula sem arcu, eu pulvinar neque cursus ac. Aliquam ultricies lobortis magna et aliquam. Vestibulum egestas eu urna sed ultricies. Nullam pulvinar dolor vitae quam dictum condimentum. Integer a sodales elit, eu pulvinar leo. Nunc nec aliquam nisi, a mollis neque. Ut vel felis quis tellus hendrerit placerat. Vivamus vel nisl non magna feugiat dignissim sed ut nibh. Nulla elementum, est a pretium hendrerit, arcu risus luctus augue, mattis aliquet orci ligula eget massa. Sed ut ultricies felis.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END MODAL CONFIG PORTLET-->
+        </div>
+        <!--END TOPBAR-->
+        <div id="wrapper">
+            <!--BEGIN SIDEBAR MENU-->
+            <nav id="sidebar" role="navigation" class="navbar-default navbar-static-side">
+                <div class="sidebar-collapse menu-scroll">
+                    <ul id="side-menu" class="nav">
+                        <li class="user-panel">
+                            <div class="thumb">
+                                <img src="~/Content/images/th.jpg" alt="" class="img-circle" />
+                            </div>
+                            <div class="info">
+                                <p>Admin</p>
+                                <ul class="list-inline list-unstyled">
+                                    <li>
+                                        <a href="extra-profile.html" data-hover="tooltip" title="个人信息"><i class="fa fa-user"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="email-inbox.html" data-hover="tooltip" title="邮件"><i class="fa fa-envelope"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-hover="tooltip" title="设置" data-toggle="modal" data-target="#modal-config"><i class="fa fa-cog"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="/Login/Index" data-hover="tooltip" title="登出"><i class="fa fa-sign-out"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                        <li class="active">
+                            <a href="/Home/Index"><i class="fa fa-tachometer fa-fw"><div class="icon-bg bg-orange"></div></i><span class="menu-title">主页</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-desktop fa-fw"><div class="icon-bg bg-pink"></div></i><span class="menu-title">网站管理</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/News/Index"><i class="fa fa-paperclip"></i><span class="submenu-title">新闻管理</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="animations.html"><i class="fa fa-slack fa-fw"><div class="icon-bg bg-green"></div></i><span class="menu-title">了解更多</span></a>
+                        </li>
+                        <!--li.charts-sum<div id="ajax-loaded-data-sidebar"></div>-->
+                    </ul>
+                </div>
+            </nav>
+            <!--END SIDEBAR MENU-->
+            <!--BEGIN PAGE WRAPPER-->
+            <div id="page-wrapper">
+                <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                    <div class="page-header pull-left">
+                        <div class="page-title">主页</div>
+                    </div>
+                    <ol class="breadcrumb page-breadcrumb pull-left">
+                        <li><i class="fa fa-home"></i>&nbsp;<a href="/Home/Index">主页</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="hidden"><a href="#">网站管理</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="active">网站管理</li>
+                    </ol>
+                    <div class="clearfix"></div>
+                </div>
+                <!--END TITLE & BREADCRUMB PAGE-->
+                <!--BEGIN CONTENT-->
+                <div class="page-content">
+                </div>
+                <!--END CONTENT-->
+            </div>
+            <!--BEGIN FOOTER-->
+            <div id="footer">
+                <div class="copyright">© @DateTime.Now.Year-贵州路泰科技有限公司</div>
+            </div>
+            <!--END FOOTER-->
+            <!--END PAGE WRAPPER-->
+        </div>
+    </div>
+    <script src="~/Content/MAdmin/js/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/MAdmin/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Content/MAdmin/js/jquery-ui.js"></script>
+    <!--loading bootstrap js-->
+    <script src="~/Content/MAdmin/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+    <script src="~/Content/MAdmin/js/html5shiv.js"></script>
+    <script src="~/Content/MAdmin/js/respond.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/MAdmin/vendors/slimScroll/jquery.slimscroll.js"></script>
+    <script src="~/Content/MAdmin/vendors/jquery-cookie/jquery.cookie.js"></script>
+    <script src="~/Content/MAdmin/vendors/iCheck/icheck.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/iCheck/custom.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/jquery-notific8/jquery.notific8.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/jquery-highcharts/highcharts.js"></script>
+    <script src="~/Content/MAdmin/js/jquery.menu.js"></script>
+    <!--<script src="~/Content/MAdmin/vendors/jquery-pace/pace.min.js"></script>-->
+    <script src="~/Content/MAdmin/vendors/holder/holder.js"></script>
+    <script src="~/Content/MAdmin/vendors/responsive-tabs/responsive-tabs.js"></script>
+    <script src="~/Content/MAdmin/vendors/jquery-news-ticker/jquery.newsTicker.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/moment/moment.js"></script>
+    <script src="~/Content/MAdmin/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="~/Content/MAdmin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!--CORE JAVASCRIPT-->
+    <script src="~/Content/MAdmin/js/main.js"></script>
+    <!--LOADING SCRIPTS FOR PAGE-->
+    <script src="~/Content/MAdmin/vendors/intro.js/intro.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.categories.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.pie.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.tooltip.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.resize.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.fillbetween.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.stack.js"></script>
+    <script src="~/Content/MAdmin/vendors/flot-chart/jquery.flot.spline.js"></script>
+    <script src="~/Content/MAdmin/vendors/calendar/zabuto_calendar.min.js"></script>
+    <script src="~/Content/MAdmin/vendors/sco.message/sco.message.js"></script>
+    <script src="~/Content/MAdmin/vendors/intro.js/intro.js"></script>
+    <script src="~/Content/MAdmin/js/index.js"></script>
+    <script type="text/javascript">
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-145464-14', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>

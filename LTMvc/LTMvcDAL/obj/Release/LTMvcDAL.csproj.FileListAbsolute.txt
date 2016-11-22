@@ -1,0 +1,14 @@
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcDAL.dll
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcDAL.pdb
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcModels.dll
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcModels.pdb
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.csprojResolveAssemblyReference.cache
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.dll
+C:\Users\QQQ\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.pdb
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcDAL.dll
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcDAL.pdb
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcModels.dll
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\bin\Release\LTMvcModels.pdb
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.csprojResolveAssemblyReference.cache
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.dll
+C:\Users\ChenyxPC\Desktop\LTMvc\LTMvcDAL\obj\Release\LTMvcDAL.pdb
